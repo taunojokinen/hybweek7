@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
 
     flatlistText: {
-      fontSize: 16,
+      fontSize: 20,
       padding: 4,
       margin: 4,   
     },

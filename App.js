@@ -40,7 +40,7 @@ export default function App() {
     <TouchableOpacity
       onPress={() => handleRemoveTodo(item.id)}
       style={[styles.item, { backgroundColor: item.id === selectedId ? '#add8e6' : '#fff' }]}>
-      <Text style={styles.title}>{item.name}</Text>
+      <Text style={styles.flatlistText}>{item.name}</Text>
     </TouchableOpacity>
   );
 
