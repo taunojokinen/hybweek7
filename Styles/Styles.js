@@ -3,16 +3,15 @@ import { StyleSheet, StatusBar, Button } from 'react-native';
 const styles = StyleSheet.create({
     view: {
       flex: 1,
-      marginTop: StatusBar.currentHeight || 20,
+      marginTop: StatusBar.currentHeight || 40,
       alignItems: 'center',
-      justifyContent: 'center',
     },
     container: {
-      flexDirection: '1', 
-      backgroundColor: 'fff',
+      flexDirection: 'row', 
+      backgroundColor: '#fff',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginTop: 30,
+      marginTop: 10,
         padding: 16,
     },
     header: {
@@ -23,17 +22,13 @@ const styles = StyleSheet.create({
     },
     flatlist: {
         flexDirection: 'column',
-      width: '100%',
+        width: '100%',
+        alignItems: 'flex-start',
+        paddingLeft: 24,
+        fontSize: 24,
     },
-    row: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: 4,
-        marginLeft: 12,
-        marginRight: 12,
-    },
-    rowText: {
+
+    flatlistText: {
       fontSize: 16,
       padding: 4,
       margin: 4,   
@@ -46,17 +41,9 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 0,
         padding: 4,
-        width: '80%',
+        width: '70%',
       },
-      searchBox: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'lightblue',
-        padding: 4,
-        margin: 4,
-        width: '100%',
-      },
+     
       button: {
         width: '20%',
         height: 50,

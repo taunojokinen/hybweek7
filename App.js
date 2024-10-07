@@ -1,15 +1,10 @@
 
 
-import { Text,Pressable,TextInput, TouchableOpacity} from 'react-native';
+import { Text,TextInput, TouchableOpacity} from 'react-native';
 import { FlatList, SafeAreaView, View } from 'react-native';
 import React, { useCallback, useEffect, useMemo, useState, useReducer } from 'react';
-import Row from './Components/Row.js';
 import styles from './Styles/Styles.js';
 import uuid from 'react-native-uuid';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
-const STORAGE_KEY = '@items_key'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,16 +30,11 @@ export default function App() {
       dispatch({ type: 'ADD', name});
       setName("");
     }
-  
-  
+
     function handleRemoveTodo(id) {
       dispatch({ type: 'REMOVE', id });
     }
 
-
-  const select = useCallback((id) => {
-    setSelectedId(id);
-  }, []);
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
@@ -53,7 +43,6 @@ export default function App() {
       <Text style={styles.title}>{item.name}</Text>
     </TouchableOpacity>
   );
-
 
   return (
     
@@ -69,11 +58,14 @@ export default function App() {
            <TouchableOpacity style={styles.button} onPress={() => handleAddTodo(name)}>
            <Text style={styles.buttonText}>Save</Text>
            </TouchableOpacity>
+        </View>
+        <View style={styles.flatlist}>
            <FlatList
-          data={todos}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-          extraData={selectedId}
+              data={todos}
+              renderItem={renderItem}
+              keyExtractor={item => item.id}
+              extraData={selectedId}
+              
         />
 
         </View>
