@@ -7,11 +7,7 @@ export default function Row({item, selectedId, select,data,setData}) {
     const backgroundColor = item.id === selectedId ? "#add8e6" : "#fff";
     const [strikeThrough, setStrikeThrough] = useState(item.strikeThrough || false);
 
-    const remove = () => {
-        const arrayWithoutRemoved = data.filter((item) => item.id !== selectedId);
-        setData(arrayWithoutRemoved);
-        select(null);
-    }
+
 
     const toggleStrikeThrough = () =>{
         select(item.id);
